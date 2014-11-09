@@ -1,17 +1,43 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Gary's Blog</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./index_blog.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+</head>
+
 <body>
-Benefits of using Version Control
+  <div class="about_me">
 
-Introduction to Version Control
+    <div class="banner"><img src="../imgs/profile-pic-small.jpg"></div>
+    <div class="aboutme_text">Gary Ginzburg<br/>Software/Web Developer<br/>Brooklyn, NY</div>
+</div>
+  <div class="main_content">
 
-11/2/2014
+     <div class="blog_entry">
+<div class="entry_header">Creating a Web site from scratch</div>
+<div class="entry_sub_header">Diving into HTML and CSS</div>
+<div class="entry_date">11/9/2014</div>
+<div class="entry_text">
+    There is a special sense of satisfaction from being to write the entire site form scratch without using professional templates. It requires a set of skills such as deep understanding of CSS, a sense of design and coding in javascript.
+</div>
+</div>
 
+    <div class="blog_entry">
+<div class="entry_header">Benefits of using Version Control</div>
+<div class="entry_sub_header">Introduction to Version Control</div>
+<div class="entry_date">11/2/2014</div>
+<div class="entry_text">
 Version control also known as  a revision control or source control is a way to store
 and track multiple versions of source code for programs, sites and documents.
 It's a tool that lets multiple team participants to work simultaneously on the same project.
 Version control tools allow to modify, review, store and back up multiple versions
 of the same document, source file or a binary program.
-
+<br/>
 Version Control systems track changes by creating multiple directories called branches.
 The branch that holds the production version of the files (in case of the source code -
 it's the source files that can be used to build the production version of the software)
@@ -20,26 +46,27 @@ code which later can be merged with the master branch to release the new version
 software/web application. Branches are cloned (copied) to each programmers local machine
 in order to allow them to work on the files. Once the new code is ready, it has to be
 committed to the main(remote) repository.
-
-
+<br/>
+<br/>
 This is done in four steps:
-
-1. Group the new source files into logical commit batches.
-The good practice is find related files (e.g. all files that were modified
-in order to fix a bug or introduce a new feature and pack them together)
-2. Add these files to the commit batch by running
-git add <file name>
-3. Commit the batch with a meaningful message so that that an independent
-team participant could understand the types of the modification that are committed.
-4. Push the new committed changes to the remote repository from a local machine.
-
+<br/>
+<ol >
+  <li>Group the new source files into logical commit batches. The good practice is to find related files (e.g. all files that were modified in order to fix a bug or introduce a new feature and pack them together)</li>
+  <li>Add these files to the commit batch by running
+git add &lt;file name&gt;</li>
+<li>Commit the batch with a meaningful message so that that an independent  steam participant could understand the types of the modification that are committed.</li>
+<li>Push the new committed changes to the remote repository from a local machine.</li>
+</ol>
+<br/>
 GitHub is a service that works seamlessly with GIT tools. GitHub provides a easy
 way to create new repositories and share them with collaborators across the world
 without the additional need administer the servers and security that would otherwise
 be needed to offer this functionality.
-
+<br/>
 Combination of Git with GitHub are a perfect solution to start a new collaborative project
 with little effort and cost free.
-
+</div>
+</div>
+</div>
 </body>
 <html>

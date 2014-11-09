@@ -1,5 +1,65 @@
-<html>
-  <body>
-      Hello DBC!
-  </body>
-</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Gary's Site</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./index_dbc.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+  <script language="javascript" type="text/javascript" src="./dbc_script.js"></script>
+</head>
+
+<body onload="javascript:displayContent('main_content','content_aboutme');">
+
+<div class="main_grid">
+
+        <!-- Header -->
+        <div class="header_grid">
+          <!-- Left Column -->
+              <div class="header_left"><div class="site_title_big">Gary Ginzburg</div><div class="site_title_small">Software/Web Developer, Brooklyn,NY</div></div>
+              <!--Right Column -->
+              <div class="menu_small">
+                <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_aboutme');">About Me</a>
+              </span>
+              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_myprojects');">My Projects</span>
+              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_philosophy');">Team Philosophy</span>
+              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_contact');">Contact</span>
+              <span class="small_menu_item small_menu_item_last" onclick="javascript:openPage('http://garygz.github.io/blog/index.html');">Blog</span>
+            </div>
+            <div class="banner"><img src="./imgs/profile-pic-small.jpg"></div>
+          </div>
+          <div class="side_bar">
+      <div class="side_bar_item">
+        <div class="side_bar_item_header">Stay in Touch</div>
+            <div class="side_bar_item_content">
+                <div class="side_bar_item_link" onclick="javascript:openPage('https://twitter.com/gary_dbc');">
+                  <img src="./imgs/twitter.png"  align="middle">&nbsp;Find Me On Twitter</div>
+                <div class="side_bar_item_link" onclick="javascript:openPage('https://plus.google.com/100268600395743532305/posts');">
+                  <img src="./imgs/googleplus.png" align="middle">&nbsp;Find Me On Google+</div>
+                <div class="side_bar_item_link" onclick="javascript:openPage('https://www.linkedin.com/pub/gary-ginzburg/6/a03/630/');"><img src="./imgs/linkedin.png"  align="middle">&nbsp;Find Me On LinkedIn</div>
+
+            </div>
+
+     </div>
+     </div>
+
+
+      <div id = "main_content" class="main_content">
+        <!-- Main -->
+        <div id="content_aboutme" style="display:none"> About Me place holder</div>
+        <div id="content_myprojects" style="display:none">My Projects place holder</div>
+        <div id="content_philosophy" style="display:none">Team Philosophy place holder</div>
+        <div id="content_contact" style="display:none">Contact info place holder</div>
+
+
+        &nbsp;
+      </div>
+    <div>
+        <!-- Footer -->
+        <span class="copyright">Copyright Gary Ginzburg &copy; 2014. All rights reserved.
+     </div>
+  </div>
+
+</body></html>

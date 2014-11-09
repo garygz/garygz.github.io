@@ -1,0 +1,115 @@
+html body{
+  font-family: 'Roboto Slab', serif;
+}
+
+.main_grid{
+	width:95%;
+	height:95%;
+	border: 0px solid black;
+  border-collapse: collapse;
+}
+
+.header_grid{
+
+}
+
+.header_left{
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.site_title_big{
+
+  font-size: 30px;
+  color: red;
+}
+
+.site_title_small{
+  font-size: 10px;
+  margin-left: 50px;
+}
+
+.menu_small{
+  position: absolute;
+  left: 70%;
+  top: 10px;
+
+  text-align: left;
+  font-size: 12px;
+}
+
+.small_menu_item{
+  border-right: 1px black solid;
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
+.small_menu_item_last{
+  border-right: 0px;
+
+}
+
+.small_menu_item:hover{
+  cursor: pointer;
+}
+
+.copyright{
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  vertical-align: bottom;
+  margin-top: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 8px;
+  height: 10%;
+}
+
+.main_content{
+  position: relative;
+  top: 100px;
+  left: 20px;
+
+  height: 80%;
+  width:90%;
+}
+
+.banner{
+ position: absolute;
+ left: 93%;
+ top: 30px;
+ height:60px;
+ width: 60px;
+}
+
+
+.side_bar{
+  position: relative;
+  left:90%;
+  vertical-align: text-top;
+  width: 180px;
+  top: 120px;
+  font-size: 12px;
+}
+
+
+.side_bar_item_content{
+}
+.side_bar_item_link{
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 2px;
+}
+.side_bar_item_link:hover{
+  cursor: pointer;
+
+}
+
+.side_bar_item_header{
+  background-color: #F8F8F8;
+  border-top: 1px solid black;
+  margin-bottom: 2px;
+  padding: 2px;
+
+}

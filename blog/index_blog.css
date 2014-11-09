@@ -1,0 +1,60 @@
+html body{
+  font-family: 'Roboto Slab', serif;
+  background-color: #F8F8F8;
+}
+
+.main_content{
+  font-size: 12px;
+}
+
+.about_me{
+  position: relative;
+  left: 80%;
+  top: 10px;
+  width: 200px;
+}
+
+.aboutme_text{
+  font-size: 10px;
+  font-weight:100;
+}
+
+.main_content{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 70%;
+
+}
+
+.blog_entry{
+   background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;
+
+  padding: 10px;
+  position: static;
+  margin-top: 20px;
+}
+
+.entry_header{
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.entry_sub_header{
+  margin-top: 5px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.entry_date{
+  font-weight:100;
+  margin-top: 5px;
+}
+
+.entry_text{
+  margin-top: 10px;
+
+}
