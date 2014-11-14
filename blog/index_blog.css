@@ -35,7 +35,7 @@ html body{
 
   padding: 10px;
 
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .entry_header{
@@ -58,4 +58,10 @@ html body{
   margin-top: 10px;
   height: 100%;
   overflow: auto;
+}
+
+.navigation,li{
+  display: inline;
+  margin-left: 10px;
+  font-size: 20px;
 }
