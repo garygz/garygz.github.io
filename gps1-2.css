@@ -1,0 +1,55 @@
+/* include your css here */
+body {
+        background-color:#eeeeee;
+    }
+
+    .blog-title{
+        font-size:1em;
+        width:40%;
+        margin-left:10%;
+        margin-top:2%
+    }
+    #blog-image{
+         max-width:50%;
+         position: absolute;
+         left: 50%;
+         top: 0%;
+         border-radius:15%;
+         z-index:-1;
+    }
+
+    h1{
+        color:#cc0000;
+    }
+
+    h3{
+        color:#0000cc;
+    }
+
+    blockquote {
+        color:#cc0000;
+        font-size:1.3em;
+    }
+
+    section {
+        margin-top:8%;
+        display:block;
+    }
+
+    article {
+         background-color:#ffffff;
+        display:block;
+        width:28%;
+        float:left;
+        margin-left:3%;
+        border:1px solid #aaaaaa;
+        border-radius:15%;
+        padding:0.5em;
+        text-align:center;
+    }
+
+    footer {
+        margin-top:30%;
+        clear:both;
+        text-align:center;
+    }

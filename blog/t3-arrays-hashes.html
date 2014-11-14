@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Gary's Blog</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./index_blog.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <div class="main_content">
+  <div class="about_me">
+
+    <div class="banner"><img src="../imgs/profile-pic-small.jpg"></div>
+    <div class="aboutme_text">Gary Ginzburg<br/>Software/Web Developer<br/>Brooklyn, NY</div>
+</div>
+  <nav class="navigation">
+        <ul>
+        <li><a href="http://garygz.github.io">Home</a></li>
+        <li><a href="http://garygz.github.io?page=Blogs">Blogs</a></li>
+        </ul>
+      </nav>
+
+     <div class="blog_entry">
+<div class="entry_header">Arrays and Hashes in Ruby</div>
+<div class="entry_sub_header">Usage samples of different collections</div>
+<div class="entry_date">11/13/2014</div>
+<div class="entry_text">
+    Array and Hash maps are collection classes in Ruby that allow to store lists of objects. Array is an ordered list of objects, while a Hash is an unordered list of key value pairs. The key difference is a look up time of an element and memory consumption. Array elements can be accessed by using an index which allows for afst random access of an element. However, if there is a need to look for a particular element by an object attribute then Hash class is a much better collection type since it keeps key/value pairs. Iteration over an array is faster. Arrays also require less memory to store the data.
+    These are a few way to create a new Array or Hash in ruby:
+    <pre><code>
+    #create a new empty array
+    array = []
+    #create a new array containing these numbers 1,2,3
+    array = [1,2,3]
+    #create a new Hash
+    hash = {}
+    #create a new Hash with product/price key/value pairs
+    hash = {:milk=>1.5, apples=>1.25, oranges=>2.3}
+    </code></pre>
+    This is how to create an array of predefined size of 10:
+  <pre><code>
+    array = Array.new(10)
+  </code></pre>
+    This is how to create an array of a pre&ndash;defined size of 10 with all values set to a default value of 100:
+  <pre><code>
+    array = Array.new(10,100)
+  </code></pre>
+
+    Array elements are accessed by using square brackets - [n], at or a fetch method. Indexes are zero based meaning the first element has an index of 0.
+    <pre><code>
+      array = [1,2,3]
+      value = array[0]
+      puts value == 1 #this will return true
+
+      value = array.at(1)
+      puts value == 2 #this will return true
+
+
+      #This will raise an exception since
+      # there is no element with an index of 4.
+      #This how fetch differs from [] or at
+      #method which will return nil
+      value = array.fetch(4)
+    </code></pre>
+    <br/>
+    <p>More information about Ruby arrays can be found here:
+    <a href="http://www.ruby-doc.org/core-2.1.4/Array.html">Arrays</a>
+  </p>
+    Hash values get accessed by using a square bracket or a fetch method with the key. Unlike in the Array class, fetch method will not raise an exception but will return a nil if the key does not exist. It also supports one more argument which specifies the default value to return.
+    <pre><code>
+      #create a new Hash with product/price key/value pairs
+      hash = {:milk=>1.5, apples=>1.25, oranges=>2.3}
+
+      value = hash[:milk]
+      puts 1.5 == value #this is true
+
+      value = hash.fetch(:milk)
+      puts 1.5 == value #this is true
+
+      #return the default value for a non-existant key
+      value = hash.fetch(:cake, "not available");
+      puts "not available" == value #true
+    </code></pre>
+    <br/>
+    More information about Ruby hashes can be found here:
+    <a href="http://www.ruby-doc.org/core-2.1.4/Hash.html">Hashes</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</body>
+<html>
