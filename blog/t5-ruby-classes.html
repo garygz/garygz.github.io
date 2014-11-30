@@ -29,7 +29,7 @@
 
      <div class="blog_entry">
 <div class="entry_header">Ruby Classes</div>
-<div class="entry_sub_header">What is it and how to use it</div>
+<div class="entry_sub_header">What Is It and How To Use It</div>
 <div class="entry_date">11/27/2014</div>
 <div class="entry_text">
 <!--
@@ -37,12 +37,12 @@
 Create an example class and teach others when to use instance variables, instance methods, etc. for that object.
 
 -->
-Ruby classes are simply a way to create logical groups of functionality to increase code readability, maintainability and reliability. Class represents a type of an object which could be created to hold data and allow programmers to manipulate that data to mimic to perform useful tasks. For example, let's create a class represent a checking account:
+Ruby classes are simply a way to create logical groups of functionality to increase code readability, maintainability and reliability. Class represents a type of an object which could be created to hold data and allow programmers to manipulate that data to mimic real life tasks. For example, let's create a class that represents a checking account:
 <pre class="brush: ruby">
 class CheckingAccount
 end
 </pre>
-<p>So far this class does not do anything at all, so let's make a little more useful. A checking account should hold the data about you and the amount of dollars that you keep on your account. That means <code>CheckingAccount</code> should have instance variables(variables that represent the state of the object i.e. your account information). The best - more robust way to declare instance variables is by using <code>attr_accessor</code> keyword. Not only it defines clearly what the instance variables are for the class, but it also creates setter/getter methods for accessing and manipulating your data. Furthermore, we will add an initialize method (object constructor) so we can create a new object (i.e. open new checking account).
+<p>So far this class does not do anything at all, so let's make it a little more useful. A checking account should hold the data about you and the amount of dollars that you keep in your account. That means <code>CheckingAccount</code> should have instance variables (variables that represent the state of the object i.e. your account information). The best way to declare instance variables is by using <code>attr_accessor</code> keyword. Not only it defines clearly what the instance variables are for the class, but it also creates setter/getter methods for accessing and manipulating your data. In addition to getters and setters, there is the <code>initialize</code> method that has to be optionally declared. The <code>initialize</code> method i.e. object constructor is required in order to create a new object of the specified class (type) with the correct initial state.
 <pre class="brush: ruby">
   <code>
 class CheckingAccount
@@ -70,11 +70,11 @@ puts "How much does David has on his account now? $#{davidsCheckingAccount.amoun
 </p>
 <p>There are two things to note here:
 <ol>
-  <ul>When declaring instance variable using attr_accessor each variable should start with a colon<code>:name</code></ul>
-  <ul>When using the instance variable anywhere withing the class @ sign should nbe used<code>@name = name</code></ul>
+  <li>When declaring an instance variable using attr_accessor each variable should start with a colon<code>:name</code></li>
+  <li>When using an instance variable anywhere within the class @ sign should be used<code>@name = name</code></li>
 </ol>
 </p>
-<p>As we see above David just deposited $100 to his account. All actions that can be performed on a class are methods. So let's write a method deposit which allow David to deposit any amount and then see the new balance:
+<p>As we see above, David just deposited $100 on his account. All actions that can be performed on a class are methods. So let's write a method named <code>deposit</code> which allows David to deposit any amount and then obtain the new balance:
 <pre><code>
 class CheckingAccount
   attr_accessor :name, :address, :phone, :amount
@@ -90,26 +90,23 @@ class CheckingAccount
   end
 end
 
-#let's create two new accounts
+#create a new account
 davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)
-samsCheckingAccount = CheckingAccount.new("Sam","1 Liitle St, New York, NY 11211", "617-111-1111", 50)
 
 puts "How much does David has on his account? $#{davidsCheckingAccount.amount}" #&lt;= 100
-
+</code></pre>
+<p>Unlike in the previous example, we actually deposit the amount that David brings into the bank and let the class itself manipulate the data in order to set the correct balance. This is a concept of encapsulation - we let the class perform the correct action rather then deciding ourselves on to how to calculate the correct balance
+</p>
+<pre><code>
 # David deposits $100 so now he has $200
-# Unlike in the previous example, we actually deposit the amount that David brings into the bank
-# and let the class itself manipulate the data in order to set the correct balance.
-# This is a concept of encapsulation - we let the class perform the correct action
-# rather then deciding ourselves on to how to calculate the correct balance
 davidsCheckingAccount.deposit (100)
 
 puts "How much does David has on his account now? $#{davidsCheckingAccount.amount}" #&lt;= 200
-
 </code></pre>
 </p>
-<p>Good class design should be transparent, reusable, well encapsulated and loosely coupled. Transparent classes are classes that can be easily understood by other programmers. Their names and methods serve as basic documentation and are simple and logical. For example, the purpose and the expected functionality of a class named CheckingAccount is clear. However if we call it CAcct, the purpose of the class becomes unclear and thus not transparent.</p>
-<p>Reusable classes are the ones that can be used in other contexts, for example <code>CheckingAccount</code> can be also easily used as savings account.</p>
-<p>Well encapsulated classes do not expose and do not allow to modify it's instance variables to external programs and instead provide well defined interface(methods) which allow to access and manipulate data only within the allowable object state. For example, method deposit can check that the amount is not negative and will not allow to withdraw money instead of depositing.
+<p>Good class design should be transparent, reusable, well encapsulated and loosely coupled. Transparent classes are classes that can be easily understood by other programmers. Their names and methods serve as basic documentation and are simple and logical. For example, the purpose and the expected functionality of a class named CheckingAccount is clear. However if we call it Cacct, the purpose of the class becomes unclear and thus not transparent.</p>
+<p>Reusable classes are the ones that can be used in other contexts, for example <code>CheckingAccount</code> can be also used as a savings account. Its methods perform only the actions that are associated with a bank account and thus are easily reusable in the context of a saving account.</p>
+<p>Well encapsulated classes do not allow direct access to its instance variables by external programs. Instead they provide well defined interfaces (methods) which allow access and manipulation of its data only within the allowable object state. For example, method <code>deposit</code> can check if the <code>depositAmount</code> is positive and will not allow to withdraw money instead of depositing. Adding <code>withdrawal</code> method allows to perform the withdrawal and make sure that the <code>withdrawalAmount</code> does not exceed the account balance.
 <pre><code>
 def deposit(depositAmount)
   if depositAmount&lt;0 raise IllegalArgument, "Negative deposit"
@@ -122,7 +119,7 @@ def withdrawal (withdrawalAmount)
 end
 </code></pre>
 <p>
-Loosely coupled classes is a design pattern which promotes applications that are easi to maintain and modify. It means that a change in one class does not trigger changes in other classes. One such example would be to use Ruby HashMap constrictor arguments instead of a fixed list such as this:
+Loosely coupled classes is a good design practice which promotes applications that are easy to maintain and modify. It means that a change in one class does not trigger changes in other classes. One such example would be to use Ruby HashMap constructor arguments instead of a fixed list such as this:
  <pre><code>
   def initialize(name, address, phone, amount)
     @name = name
@@ -148,9 +145,9 @@ class CheckingAccount
   end
 end
 </code></pre>
-Now this code will break meaning that our previous class was not loosely coupled:
+<p>Now the following code will not work - meaning that our previous class was not loosely coupled:</p>
 </br><code>davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)</code>
-However, if we re-write the constructor to use a hash map:
+<p>However, if we re-write the constructor to use a hash map:</p>
 <pre><code>
 def initialize(args)
     @name = args.fetch(:name)
@@ -171,7 +168,7 @@ davidsCheckingAccount = CheckingAccount.new({
 ..........
 puts "What is David's email? #{davidsCheckingAccount.email}" #&lt;= N/A
 </code></pre>
-This code will still work even though we a.rIt is now passing the email address to the constructor. It is now is loosely coupled.
+The code above works even though the email address is not passed to the constructor. In fact, it is now loosely coupled.
 </p>
 <p>To summarize: classes are just a way to group variables and methods into small logical groups which are easy to maintain, modify, re-use and understand.</p>
 </div>
