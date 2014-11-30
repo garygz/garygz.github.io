@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Gary's Blog</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./index_blog.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+  <script language="javascript" type="text/javascript" src="../dbc_script.js"></script>
+</head>
+
+<body>
+
+  <div class="main_content">
+  <div class="about_me">
+
+    <div class="banner"><img src="../imgs/profile-pic-small.jpg"></div>
+    <div class="aboutme_text">Gary Ginzburg<br/>Software/Web Developer<br/>Brooklyn, NY</div>
+</div>
+  <nav class="navigation">
+    <ul>
+    <li><a onclick="javascript:deleteCookie('page');" href="../index.html">Home</a></li>
+    <li><a href="../index.html">Blogs</a></li>
+    </ul>
+    </nav>
+
+     <div class="blog_entry">
+<div class="entry_header">Ruby Classes</div>
+<div class="entry_sub_header">What is it and how to use it</div>
+<div class="entry_date">11/27/2014</div>
+<div class="entry_text">
+<!--
+  ## Release 1: Topic
+Create an example class and teach others when to use instance variables, instance methods, etc. for that object.
+
+-->
+Ruby classes are simply a way to create logical groups of functionality to increase code readability, maintainability and reliability. Class represents a type of an object which could be created to hold data and allow programmers to manipulate that data to mimic to perform useful tasks. For example, let's create a class represent a checking account:
+<pre class="brush: ruby">
+class CheckingAccount
+end
+</pre>
+<p>So far this class does not do anything at all, so let's make a little more useful. A checking account should hold the data about you and the amount of dollars that you keep on your account. That means <code>CheckingAccount</code> should have instance variables(variables that represent the state of the object i.e. your account information). The best - more robust way to declare instance variables is by using <code>attr_accessor</code> keyword. Not only it defines clearly what the instance variables are for the class, but it also creates setter/getter methods for accessing and manipulating your data. Furthermore, we will add an initialize method (object constructor) so we can create a new object (i.e. open new checking account).
+<pre class="brush: ruby">
+  <code>
+class CheckingAccount
+  attr_accessor :name, :address, :phone, :amount
+  def initialize(name, address, phone, amount)
+    @name = name
+    @address = address
+    @phone = phone
+    @amount = amount
+  end
+end
+
+#let's create two new accounts
+davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)
+samsCheckingAccount = CheckingAccount.new("Sam","1 Liitle St, New York, NY 11211", "617-111-1111", 50)
+
+puts "How much does David has on his account? $#{davidsCheckingAccount.amount}" #&lt;= 100
+
+# David deposits $100 so now he has $200
+davidsCheckingAccount.amount = 200
+
+puts "How much does David has on his account now? $#{davidsCheckingAccount.amount}" #&lt;= 200
+</code>
+</pre>
+</p>
+<p>There are two things to note here:
+<ol>
+  <ul>When declaring instance variable using attr_accessor each variable should start with a colon<code>:name</code></ul>
+  <ul>When using the instance variable anywhere withing the class @ sign should nbe used<code>@name = name</code></ul>
+</ol>
+</p>
+<p>As we see above David just deposited $100 to his account. All actions that can be performed on a class are methods. So let's write a method deposit which allow David to deposit any amount and then see the new balance:
+<pre><code>
+class CheckingAccount
+  attr_accessor :name, :address, :phone, :amount
+  def initialize(name, address, phone, amount)
+    @name = name
+    @address = address
+    @phone = phone
+    @amount = amount
+  end
+
+  def deposit(depositAmount)
+    @amount = @amount + depositAmount
+  end
+end
+
+#let's create two new accounts
+davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)
+samsCheckingAccount = CheckingAccount.new("Sam","1 Liitle St, New York, NY 11211", "617-111-1111", 50)
+
+puts "How much does David has on his account? $#{davidsCheckingAccount.amount}" #&lt;= 100
+
+# David deposits $100 so now he has $200
+# Unlike in the previous example, we actually deposit the amount that David brings into the bank
+# and let the class itself manipulate the data in order to set the correct balance.
+# This is a concept of encapsulation - we let the class perform the correct action
+# rather then deciding ourselves on to how to calculate the correct balance
+davidsCheckingAccount.deposit (100)
+
+puts "How much does David has on his account now? $#{davidsCheckingAccount.amount}" #&lt;= 200
+
+</code></pre>
+</p>
+<p>Good class design should be transparent, reusable, well encapsulated and loosely coupled. Transparent classes are classes that can be easily understood by other programmers. Their names and methods serve as basic documentation and are simple and logical. For example, the purpose and the expected functionality of a class named CheckingAccount is clear. However if we call it CAcct, the purpose of the class becomes unclear and thus not transparent.</p>
+<p>Reusable classes are the ones that can be used in other contexts, for example <code>CheckingAccount</code> can be also easily used as savings account.</p>
+<p>Well encapsulated classes do not expose and do not allow to modify it's instance variables to external programs and instead provide well defined interface(methods) which allow to access and manipulate data only within the allowable object state. For example, method deposit can check that the amount is not negative and will not allow to withdraw money instead of depositing.
+<pre><code>
+def deposit(depositAmount)
+  if depositAmount&lt;0 raise IllegalArgument, "Negative deposit"
+  @amount = @amount + depositAmount
+end
+
+def withdrawal (withdrawalAmount)
+  if withdrawalAmount&gt;amount raise IllegalArgument, "More then the balance amount"
+    @amount = @amount + depositAmount
+end
+</code></pre>
+<p>
+Loosely coupled classes is a design pattern which promotes applications that are easi to maintain and modify. It means that a change in one class does not trigger changes in other classes. One such example would be to use Ruby HashMap constrictor arguments instead of a fixed list such as this:
+ <pre><code>
+  def initialize(name, address, phone, amount)
+    @name = name
+    @address = address
+    @phone = phone
+    @amount = amount
+  end
+ </pre></code>
+ Let's say we need to add an email instance variable as an optional field to <code>CheckingAccount</code>.
+ <pre><code>
+class CheckingAccount
+  attr_accessor :name, :address, :phone, :amount, :email
+  def initialize(name, address, phone, amount, email)
+    @name = name
+    @address = address
+    @phone = phone
+    @amount = amount
+    @email = email
+  end
+
+  def deposit(depositAmount)
+    @amount = @amount + depositAmount
+  end
+end
+</code></pre>
+Now this code will break meaning that our previous class was not loosely coupled:
+</br><code>davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)</code>
+However, if we re-write the constructor to use a hash map:
+<pre><code>
+def initialize(args)
+    @name = args.fetch(:name)
+    @address = args.fetch(:address)
+    @phone = args.fetch(:phone)
+    @amount = args.fetch(:amount)
+    @email = args.fetch(:email, "N/A")
+end
+</code></pre>
+and change the instance creation method call to use a hash map as well:
+<pre><code>
+davidsCheckingAccount = CheckingAccount.new({
+    :name=>"David",
+    :address=>"1 West St, Smallville, NY 11211",
+    :phone=>"617-111-1111",
+     :amount=>100})
+
+..........
+puts "What is David's email? #{davidsCheckingAccount.email}" #&lt;= N/A
+</code></pre>
+This code will still work even though we a.rIt is now passing the email address to the constructor. It is now is loosely coupled.
+</p>
+<p>To summarize: classes are just a way to group variables and methods into small logical groups which are easy to maintain, modify, re-use and understand.</p>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+<html>
