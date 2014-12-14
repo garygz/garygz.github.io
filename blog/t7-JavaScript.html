@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head>
+
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Gary's Blog</title>
+
+
+
+  <link rel="stylesheet" type="text/css" href="./index_blog.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+  <script language="javascript" type="text/javascript" src="../dbc_script.js"></script>
+</head>
+
+<body>
+
+  <div class="main_content">
+  <div class="about_me">
+
+    <div class="banner"><img src="../imgs/profile-pic-small.jpg"></div>
+    <div class="aboutme_text">Gary Ginzburg<br/>Software/Web Developer<br/>Brooklyn, NY</div>
+</div>
+  <nav class="navigation">
+    <ul>
+    <li><a onclick="javascript:deleteCookie('page');" href="../index.html">Home</a></li>
+    <li><a href="../index.html">Blogs</a></li>
+    </ul>
+    </nav>
+
+     <div class="blog_entry">
+<div class="entry_header">Ruby vs JavaScript</div>
+<div class="entry_sub_header">Differences in looping</div>
+<div class="entry_date">12/13/2014</div>
+<div class="entry_text">
+  <p>While there are a lot of similarities between Ruby in JavaScript, looping is probably the prime example of where Ruby offers a lot of functionality out of the box compared to JavaScript.<br>
+    While both languages support while and for loops, Ruby offers a bunch of iterator methods which minimize the amount of code required to map, select, delete or aggregate data on both maps and arrays. Maps and arrays in Ruby both implement the same interface <a href="http://ruby-doc.org/core-2.1.5/Enumerable.html"><code>Enumerable</code></a> and therefore offer the same kind of iteration functionality. In JavaScript, however, there are no such methods provided by arrays or JSON objects. In order to to support a function has to be introduced that can provide the functionality. While it is possible to create functions in JavaScript for map, select and other Ruby like methods, programmers either have to use a global common library or create those functions in place.
+  </p>
+  <p>Let's take a look at a function that doubles values in a Ruby map vs JavaScript object:
+  <pre><code>
+hashMap = {:value1=>10, :value2=>2, :value=>15}
+
+hashMap.update(hashMap){ |k,v| v*2 }
+
+p hashMap #&lt;={:value1=>20, :value2=>4, :value=>30}
+  </code></pre>
+  Here is the same basic code in JavaScript
+  <pre><code>
+map = {
+  value1:10,
+  value2:2,
+  value3:15
+
+}
+
+for (var key in map) {
+  map[key] = map[key]*2;
+}
+console.log(map);//{ value1: 20, value2: 4, value3: 30 }
+
+</pre></code>
+  The code below achieves the same results using Ruby like implementation:
+  <pre><code>
+var mapFunction = function(array, func) {
+  var results = {};
+
+  for (var key in map) {
+    results[key] = (func(map[key]));
+  }
+
+  return results;
+};
+
+
+map = {
+  value1:10,
+  value2:2,
+  value3:15
+
+}
+
+var doubleValueFunction = function(x) { return x * 2 };
+
+var doubleMap = mapFunction(map, doubleValueFunction);
+console.log(doubleMap);//{ value1: 20, value2: 4, value3: 30 }
+
+  </pre></code>
+  As discussed above, Ruby code is a lot more compact and only requires one line of code to implement the logic.
+  However, with the new standard called <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript 6</a> the differences will be minimized.
+  </p>
+  </p>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+<html>
