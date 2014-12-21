@@ -75,3 +75,13 @@ a:visited{
   color: black;
 }
 
+.example-grid{
+  border-collapse: collapse;
+  width: 100%;
+  background-color:#E5E4E2;
+}
+
+tr, th, td {
+  border: 1px solid gray;
+  padding: 2%;
+}
