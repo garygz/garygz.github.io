@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <!-- PHOTO (AVATAR) -->
+                <div id="photo">
+                    <img src="/img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+                </div>
+                <div id="text-header">
+                    <h1><span>Gary Ginzburg</span></h1>
+                    <div>Software/Web Developer</div>
+                    <div>Brooklyn, NY</div>
+                </div>
+                <!-- Nav Bar -->
+                <nav id="nav-text">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../portfolio/portfolios.html">Portfolio</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="../index.html">Contact</a></li>
+                    </ol>
+                </nav>
+                <!-- Nav Bar End -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+            <div class="box ">
+                <h3>Arrays and Hashes in Ruby</h3>
+                <div class="entry_header"></div>
+                <p class="entry_sub_header">Usage samples of different collections</p>
+                <p class="entry_date">11/13/2014</p>
+
+                <div class="entry_text" >
+                    <p>
+
+                        Array and Hash maps are collection classes in Ruby that allow to store lists of objects. Array is an ordered list of objects, while a Hash is an unordered list of key value pairs. The key difference is a look up time of an element and memory consumption. Array elements can be accessed by using an index which allows for afst random access of an element. However, if there is a need to look for a particular element by an object attribute then Hash class is a much better collection type since it keeps key/value pairs. Iteration over an array is faster. Arrays also require less memory to store the data.
+                        These are a few way to create a new Array or Hash in ruby:
+    <pre><code>
+        #create a new empty array
+        array = []
+        #create a new array containing these numbers 1,2,3
+        array = [1,2,3]
+        #create a new Hash
+        hash = {}
+        #create a new Hash with product/price key/value pairs
+        hash = {:milk=>1.5, apples=>1.25, oranges=>2.3}
+    </code></pre>
+                        This is how to create an array of predefined size of 10:
+  <pre><code>
+      array = Array.new(10)
+  </code></pre>
+                        This is how to create an array of a pre&ndash;defined size of 10 with all values set to a default value of 100:
+  <pre><code>
+      array = Array.new(10,100)
+  </code></pre>
+
+                        Array elements are accessed by using square brackets - [n], at or a fetch method. Indexes are zero based meaning the first element has an index of 0.
+    <pre><code>
+        array = [1,2,3]
+        value = array[0]
+        puts value == 1 #this will return true
+
+        value = array.at(1)
+        puts value == 2 #this will return true
+
+
+        #This will raise an exception since
+        # there is no element with an index of 4.
+        #This how fetch differs from [] or at
+        #method which will return nil
+        value = array.fetch(4)
+    </code></pre>
+                        <br/>
+                        <p>More information about Ruby arrays can be found here:
+                            <a href="http://www.ruby-doc.org/core-2.1.4/Array.html">Arrays</a>
+                        </p>
+                    <p>
+                        Hash values get accessed by using a square bracket or a fetch method with the key. Unlike in the Array class, fetch method will not raise an exception but will return a nil if the key does not exist. It also supports one more argument which specifies the default value to return.
+                    </p>
+                    <pre><code>
+        #create a new Hash with product/price key/value pairs
+        hash = {:milk=>1.5, apples=>1.25, oranges=>2.3}
+
+        value = hash[:milk]
+        puts 1.5 == value #this is true
+
+        value = hash.fetch(:milk)
+        puts 1.5 == value #this is true
+
+        #return the default value for a non-existant key
+        value = hash.fetch(:cake, "not available");
+        puts "not available" == value #true
+    </code></pre>
+                        <br/>
+                        <p>More information about Ruby hashes can be found here:
+                        <a href="http://www.ruby-doc.org/core-2.1.4/Hash.html">Hashes</a>
+                        </p>
+
+                    </p>
+                </div>
+
+
+            </div>
+
+
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="js/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- SCRIPTS -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

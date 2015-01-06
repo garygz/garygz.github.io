@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <!-- PHOTO (AVATAR) -->
+                <div id="photo">
+                    <img src="/img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+                </div>
+                <div id="text-header">
+                    <h1><span>Gary Ginzburg</span></h1>
+                    <div>Software/Web Developer</div>
+                    <div>Brooklyn, NY</div>
+                </div>
+                <!-- Nav Bar -->
+                <nav id="nav-text">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../portfolio/portfolios.html">Portfolio</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="../index.html">Contact</a></li>
+                    </ol>
+                </nav>
+                <!-- Nav Bar End -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+            <div class="box ">
+                <h3>Regular Expression</h3>
+                <div class="entry_header"></div>
+                <p class="entry_sub_header">A powerful way to search and parse strings</p>
+                <p class="entry_date">12/21/2014</p>
+
+                <div class="entry_text" >
+                    <p>Regular expressions is a powerful string search and parsing notation, usually abbreviated as regex or regexp. It allows to define a concise pattern search which can be used to replace a number of characters in a text string that will match the pre-defined criteria in the regular expressions. There are character classes, meta-characters, quantifiers and ranges in regular expressions which can be combined into more complex structures.</p>
+                    <p>Let's see regex in action:</p>
+<pre><code>
+    (Test_String) regex expression will find the pattern defined in parenthesis.
+    So for this sample string "This is a sample Test_String", "Test_String" will be returned.<br>
+    [A-Z] is a range that will look for all upper case letters from A to Z.<br>
+    [AB] matches either an upper case A or B.
+</code></pre>
+                    <p>The table below demonstrates some of the character classes and meta-characters and explains how to use them:</p>
+                    <table class="example-grid">
+
+                        <thead>
+                        <tr>
+                            <th>Regular Expression</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>+</td>
+                            <td>Quantifier</td>
+                            <td>Match at least one or more characters that are followed by +.</td>
+                        </tr>
+
+                        <tr>
+                            <td>*</td>
+                            <td>Quantifier</td>
+                            <td>Match zero or more characters that are followed by *.</td>
+                        </tr>
+
+                        <tr>
+                            <td>.</td>
+                            <td>Quantifier</td>
+                            <td>Any character except new line (\n). This regex: .+ will return the entire string "test 1627 string" </td>
+                        </tr>
+
+                        <tr>
+                            <td>\w</td>
+                            <td>Character Class</td>
+                            <td>Alphanumeric characters plus "_". This regex: \w+ will match "test" in "test string". Since there is white space separating the two words only the first word will match \w+ </td>
+                        </tr>
+
+                        <tr>
+                            <td>\d</td>
+                            <td>Character Class</td>
+                            <td>Any digit. This is the same as [0-9]. \d+ will match 1627 in "test 1627 string" </td>
+                        </tr>
+
+                        <tr>
+                            <td>\s</td>
+                            <td>Character Class</td>
+                            <td>White space. This is very useful to break a sentence into an array of words (e.g. "test this string".split(/\s/) will return %w[test this string]</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                    <p>Here is an excellent cheat sheet for regural expressions: <a href="http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/">RegEx Cheat Sheet</a></p>
+
+                    <p>If you would like to test regular expressions, try this regex editor:
+                        <a href="http://rubular.com/">Regular Expressions Tester</a>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="js/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- SCRIPTS -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

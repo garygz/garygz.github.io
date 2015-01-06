@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <!-- PHOTO (AVATAR) -->
+                <div id="photo">
+                    <img src="/img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+                </div>
+                <div id="text-header">
+                    <h1><span>Gary Ginzburg</span></h1>
+                    <div>Software/Web Developer</div>
+                    <div>Brooklyn, NY</div>
+                </div>
+                <!-- Nav Bar -->
+                <nav id="nav-text">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../portfolio/portfolios.html">Portfolio</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="../index.html">Contact</a></li>
+                    </ol>
+                </nav>
+                <!-- Nav Bar End -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+            <div class="box ">
+                <h3>Ruby Enumerable class provides a lot of very useful methods out of the box</h3>
+                <div class="entry_header"></div>
+                <p class="entry_sub_header">Enumerable#group_by method</p>
+                <p class="entry_date">11/24/2014</p>
+
+                <div class="entry_text" >
+                    <p>
+                        Ruby <a href="http://ruby-doc.org/core-2.1.5/Enumerable.html"><code>Enumerable</code></a> class offers a lot of useful methods which allow to easily manipulate the contents of object lists. One of these methods is <code>Enumerable#group_by</code>.
+                        <code>group_by</code> allows to group the elements into a map of arrays with the specified group names.
+                        This is a sample of the return value <code>{:group1=>[1,2,3], :group2=>[3,4,5]}</code>.
+                        It is incredibly flexible as it takes a Ruby block as an argument which should return a group key for each passed element. This is a sample of the block which groups an array of integers such as <code>[1,2,3,4,5,6,7,8,9]</code> into two groups: odd and even:</br>
+<pre><code>
+    [1,2,3,4,5,6,7,8,9].group_by {|element| element%2==0 ? "even":"odd"}
+    #&lt;= {"odd"=>[1, 3, 5, 7, 9], "even"=>[2, 4, 6, 8]}
+</code></pre>
+                    <br/>
+                    <p>
+                    Grouping of elements is a typical task for a programmer and this methods makes life so much easier by providing a one line method to do what otherwise would take at least 4 - 5 lines of code to implement.
+                    </p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="js/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- SCRIPTS -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

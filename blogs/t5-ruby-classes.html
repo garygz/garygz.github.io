@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <!-- PHOTO (AVATAR) -->
+                <div id="photo">
+                    <img src="/img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+                </div>
+                <div id="text-header">
+                    <h1><span>Gary Ginzburg</span></h1>
+                    <div>Software/Web Developer</div>
+                    <div>Brooklyn, NY</div>
+                </div>
+                <!-- Nav Bar -->
+                <nav id="nav-text">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../portfolio/portfolios.html">Portfolio</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="../index.html">Contact</a></li>
+                    </ol>
+                </nav>
+                <!-- Nav Bar End -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+            <div class="box ">
+                <h3>Ruby Classes</h3>
+                <div class="entry_header"></div>
+                <p class="entry_sub_header">What Is It and How To Use It</p>
+                <p class="entry_date">11/27/2014</p>
+
+                <div class="entry_text" >
+                    <p>
+                        <!--
+  ## Release 1: Topic
+Create an example class and teach others when to use instance variables, instance methods, etc. for that object.
+
+-->
+                        Ruby classes are simply a way to create logical groups of functionality to increase code readability, maintainability and reliability. Class represents a type of an object which could be created to hold data and allow programmers to manipulate that data to mimic real life tasks. For example, let's create a class that represents a checking account:
+<pre class="brush: ruby">
+class CheckingAccount
+end
+</pre>
+                    <p>So far this class does not do anything at all, so let's make it a little more useful. A checking account should hold the data about you and the amount of dollars that you keep in your account. That means <code>CheckingAccount</code> should have instance variables (variables that represent the state of the object i.e. your account information). The best way to declare instance variables is by using <code>attr_accessor</code> keyword. Not only it defines clearly what the instance variables are for the class, but it also creates setter/getter methods for accessing and manipulating your data. In addition to getters and setters, there is the <code>initialize</code> method that has to be optionally declared. The <code>initialize</code> method i.e. object constructor is required in order to create a new object of the specified class (type) with the correct initial state.
+<pre class="brush: ruby">
+  <code>
+      class CheckingAccount
+          attr_accessor :name, :address, :phone, :amount
+          def initialize(name, address, phone, amount)
+          @name = name
+          @address = address
+          @phone = phone
+          @amount = amount
+          end
+      end
+
+      #let's create two new accounts
+      davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)
+      samsCheckingAccount = CheckingAccount.new("Sam","1 Liitle St, New York, NY 11211", "617-111-1111", 50)
+
+      puts "How much does David has on his account? $#{davidsCheckingAccount.amount}" #&lt;= 100
+
+      # David deposits $100 so now he has $200
+      davidsCheckingAccount.amount = 200
+
+      puts "How much does David has on his account now? $#{davidsCheckingAccount.amount}" #&lt;= 200
+  </code>
+</pre>
+                    </p>
+                    <p>There are two things to note here:
+                    <ol class="blog_list">
+                        <li>When declaring an instance variable using attr_accessor each variable should start with a colon<code>:name</code></li>
+                        <li>When using an instance variable anywhere within the class @ sign should be used<code>@name = name</code></li>
+                    </ol>
+                    </p>
+                    <p>As we see above, David just deposited $100 on his account. All actions that can be performed on a class are methods. So let's write a method named <code>deposit</code> which allows David to deposit any amount and then obtain the new balance:
+<pre><code>
+    class CheckingAccount
+        attr_accessor :name, :address, :phone, :amount
+        def initialize(name, address, phone, amount)
+            @name = name
+            @address = address
+            @phone = phone
+            @amount = amount
+        end
+
+        def deposit(depositAmount)
+            @amount = @amount + depositAmount
+        end
+    end
+
+    #create a new account
+    davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)
+
+    puts "How much does David has on his account? $#{davidsCheckingAccount.amount}" #&lt;= 100
+</code></pre>
+                    <p>Unlike in the previous example, we actually deposit the amount that David brings into the bank and let the class itself manipulate the data in order to set the correct balance. This is a concept of encapsulation - we let the class perform the correct action rather then deciding ourselves on to how to calculate the correct balance
+                    </p>
+<pre><code>
+    # David deposits $100 so now he has $200
+    davidsCheckingAccount.deposit (100)
+
+    puts "How much does David has on his account now? $#{davidsCheckingAccount.amount}" #&lt;= 200
+</code></pre>
+                    </p>
+                    <p>Good class design should be transparent, reusable, well encapsulated and loosely coupled. Transparent classes are classes that can be easily understood by other programmers. Their names and methods serve as basic documentation and are simple and logical. For example, the purpose and the expected functionality of a class named CheckingAccount is clear. However if we call it Cacct, the purpose of the class becomes unclear and thus not transparent.</p>
+                    <p>Reusable classes are the ones that can be used in other contexts, for example <code>CheckingAccount</code> can be also used as a savings account. Its methods perform only the actions that are associated with a bank account and thus are easily reusable in the context of a saving account.</p>
+                    <p>Well encapsulated classes do not allow direct access to its instance variables by external programs. Instead they provide well defined interfaces (methods) which allow access and manipulation of its data only within the allowable object state. For example, method <code>deposit</code> can check if the <code>depositAmount</code> is positive and will not allow to withdraw money instead of depositing. Adding <code>withdrawal</code> method allows to perform the withdrawal and make sure that the <code>withdrawalAmount</code> does not exceed the account balance.
+<pre><code>
+    def deposit(depositAmount)
+        if depositAmount&lt;0 raise IllegalArgument, "Negative deposit"
+        @amount = @amount + depositAmount
+    end
+
+    def withdrawal (withdrawalAmount)
+        if withdrawalAmount&gt;amount raise IllegalArgument, "More then the balance amount"
+        @amount = @amount + depositAmount
+    end
+</code></pre>
+                    <p>
+                        Loosely coupled classes is a good design practice which promotes applications that are easy to maintain and modify. It means that a change in one class does not trigger changes in other classes. One such example would be to use Ruby HashMap constructor arguments instead of a fixed list such as this:
+ <pre><code>
+     def initialize(name, address, phone, amount)
+         @name = name
+         @address = address
+         @phone = phone
+     @amount = amount
+     end
+ </pre></code>
+                    <p>Let's say we need to add an email instance variable as an optional field to <code>CheckingAccount</code>.</p>
+ <pre><code>
+     class CheckingAccount
+         attr_accessor :name, :address, :phone, :amount, :email
+         def initialize(name, address, phone, amount, email)
+             @name = name
+             @address = address
+             @phone = phone
+             @amount = amount
+             @email = email
+        end
+
+         def deposit(depositAmount)
+            @amount = @amount + depositAmount
+         end
+     end
+ </code></pre>
+                    <p>Now the following code will not work - meaning that our previous class was not loosely coupled:
+                    </br><code>davidsCheckingAccount = CheckingAccount.new("David","1 West St, Smallville, NY 11211", "617-111-1111", 100)</code>
+                    </br>However, if we re-write the constructor to use a hash map:</p>
+<pre><code>
+    def initialize(args)
+        @name = args.fetch(:name)
+        @address = args.fetch(:address)
+        @phone = args.fetch(:phone)
+        @amount = args.fetch(:amount)
+        @email = args.fetch(:email, "N/A")
+    end
+</code></pre>
+                    <p>and change the instance creation method call to use a hash map as well:</p>
+<pre><code>
+    davidsCheckingAccount = CheckingAccount.new({
+    :name=>"David",
+    :address=>"1 West St, Smallville, NY 11211",
+    :phone=>"617-111-1111",
+    :amount=>100})
+
+    ..........
+    puts "What is David's email? #{davidsCheckingAccount.email}" #&lt;= N/A
+</code></pre>
+                    <p>The code above works even though the email address is not passed to the constructor. In fact, it is now loosely coupled.
+                    </p>
+                    <p>To summarize: classes are just a way to group variables and methods into small logical groups which are easy to maintain, modify, re-use and understand.</p>
+                    </p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="js/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- SCRIPTS -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

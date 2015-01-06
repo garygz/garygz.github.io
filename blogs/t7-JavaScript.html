@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="photo-header" class="text-center">
+                <!-- PHOTO (AVATAR) -->
+                <div id="photo">
+                    <img src="/img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+                </div>
+                <div id="text-header">
+                    <h1><span>Gary Ginzburg</span></h1>
+                    <div>Software/Web Developer</div>
+                    <div>Brooklyn, NY</div>
+                </div>
+                <!-- Nav Bar -->
+                <nav id="nav-text">
+                    <ol class="breadcrumb">
+                        <li><a href="../index.html">About Me</a></li>
+                        <li><a href="../portfolio/portfolios.html">Portfolio</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="../index.html">Contact</a></li>
+                    </ol>
+                </nav>
+                <!-- Nav Bar End -->
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12">
+            <div class="box ">
+                <h3>Ruby vs JavaScript</h3>
+                <div class="entry_header"></div>
+                <p class="entry_sub_header">Differences in looping</p>
+                <p class="entry_date">12/13/2014</p>
+
+                <div class="entry_text" >
+                    <p>While there are a lot of similarities between Ruby in JavaScript, looping is probably the prime example of where Ruby offers a lot of functionality out of the box compared to JavaScript.<br>
+                        While both languages support while and for loops, Ruby offers a bunch of iterator methods which minimize the amount of code required to map, select, delete or aggregate data on both maps and arrays. Maps and arrays in Ruby both implement the same interface <a href="http://ruby-doc.org/core-2.1.5/Enumerable.html"><code>Enumerable</code></a> and therefore offer the same kind of iteration functionality. In JavaScript, however, there are no such methods provided by arrays or JSON objects. In order to support a function has to be introduced that can provide the functionality. While it is possible to create functions in JavaScript for map, select and other Ruby like methods, programmers either have to use a global common library or create those functions in place.
+                    </p>
+                    <p>Let's take a look at a function that doubles values in a Ruby map vs JavaScript object:
+  <pre><code>
+      hashMap = {:value1=>10, :value2=>2, :value=>15}
+
+      hashMap.update(hashMap){ |k,v| v*2 }
+
+      p hashMap #&lt;={:value1=>20, :value2=>4, :value=>30}
+  </code></pre>
+                    <p>Here is the same basic code in JavaScript</p>
+  <pre><code>
+      map = {
+      value1:10,
+      value2:2,
+      value3:15
+
+      }
+
+      for (var key in map) {
+      map[key] = map[key]*2;
+      }
+      console.log(map);//{ value1: 20, value2: 4, value3: 30 }
+
+</pre></code>
+                    <p>The code below achieves the same results using Ruby like implementation:</p>
+  <pre><code>
+      var mapFunction = function(array, func) {
+      var results = {};
+
+      for (var key in map) {
+      results[key] = (func(map[key]));
+      }
+
+      return results;
+      };
+
+
+      map = {
+      value1:10,
+      value2:2,
+      value3:15
+
+      }
+
+      var doubleValueFunction = function(x) { return x * 2 };
+
+      var doubleMap = mapFunction(map, doubleValueFunction);
+      console.log(doubleMap);//{ value1: 20, value2: 4, value3: 30 }
+
+  </pre></code>
+                    <p>As discussed above, Ruby code is a lot more compact and only requires one line of code to implement the logic.
+                    However, with the new standard called <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript 6</a> the differences will be minimized.
+                    </p>
+                    </p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- JQUERY -->
+<script src="js/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- SCRIPTS -->
+<script src="js/scripts.js"></script>
+</body>
+</html>

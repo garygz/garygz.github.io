@@ -1,107 +1,215 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gary Ginzburg</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Google Tag Manager -->
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLJZDC"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PLJZDC');</script>
+      <!-- End Google Tag Manager -->
 
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-  <title>Gary's Site</title>
 
-
-
-  <link rel="stylesheet" type="text/css" href="./index_dbc.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-  <script language="javascript" type="text/javascript" src="./dbc_script.js"></script>
-</head>
-<script type="text/javascript">
-  var initialPage = getInitialPage();
-</script>
-<body onload="javascript:displayContent('main_content',initialPage);">
-
-<div class="main_grid">
-
-        <!-- Header -->
-        <div class="header_grid">
-          <!-- Left Column -->
-              <div class="header_left"><div class="site_title_big">Gary Ginzburg</div><div class="site_title_small">Software/Web Developer, Brooklyn,NY</div></div>
-              <!--Right Column -->
-              <span class="menu_small">
-                <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_aboutme');">About Me</a>
-              </span>
-              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_myprojects');">My Projects</span>
-              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_philosophy');">Team Philosophy</span>
-              <span class="small_menu_item" onclick="javascript:displayContent('main_content','content_contact');">Contact</span>
-              <span class="small_menu_item small_menu_item_last" onclick="javascript:displayContent('main_content','content_blog');");">Blog</span>
-            </span>
-            <div class="banner"><img src="./imgs/profile-pic-small.jpg"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="photo-header" class="text-center">
+            <!-- PHOTO (AVATAR) -->
+            <div id="photo">
+              <img src="img/my-profile-photo.jpg" alt="Gary Ginzburg Photo">
+            </div>
+            <div id="text-header">
+              <h1><span>Gary Ginzburg</span></h1>
+              <div>Software/Web Developer</div>
+              <div>Brooklyn, NY</div>
+            </div>
+              <!-- Nav Bar -->
+              <nav id="nav-text">
+              <ol class="breadcrumb">
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="./portfolio/portfolios.html">Portfolio</a></li>
+                <li><a href="./blogs/blogs.html">Blogs</a></li>
+                <li><a href="#contacts">Contact</a></li>
+                </ol>
+              </nav>
+      <!-- Nav Bar End -->
           </div>
-          <div class="side_bar">
-      <div class="side_bar_item">
-        <div class="side_bar_item_header">Stay in Touch</div>
-            <div class="side_bar_item_content">
-                <div class="side_bar_item_link" onclick="javascript:openPage('https://twitter.com/gary_dbc');">
-                  <img src="./imgs/twitter.png"  align="middle">&nbsp;Find Me On Twitter</div>
-                <div class="side_bar_item_link" onclick="javascript:openPage('https://plus.google.com/100268600395743532305/posts');">
-                  <img src="./imgs/googleplus.png" align="middle">&nbsp;Find Me On Google+</div>
-                <div class="side_bar_item_link" onclick="javascript:openPage('https://www.linkedin.com/pub/gary-ginzburg/6/a03/630/');"><img src="./imgs/linkedin.png"  align="middle">&nbsp;Find Me On LinkedIn</div>
+        </div>
 
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <!-- ABOUT ME -->
+          <div class="box">
+            <h2>About Me</h2>
+            <p>My interest is to use technology to create great software which delights customers, improves their work productivity
+                and ultimately the quality of their lives. I feel that I have been successful in my goal as I participated in
+                creation of <a href="http://serverstudio.com">Server Studio/Sentinel</a> database management system which
+                is currently used in Fortune 500 companies worldwide.</br>Working for a small company and building the product from
+                the ground up, gave me a chance to experience various roles and aspects of application development.
+                It was exciting to meet with our clients and hear their gratitude. I often heard the following phrase in connection
+                to our software: <strong>"You are the only software company that actually understands what we are doing"</strong>.
+      </p>
+          </div>
+
+          <!-- EXPERIENCE -->
+          <div class="box">
+            <h2>Experience</h2>
+            <div class="job clearfix">
+              <div class="col-xs-3">
+                <div class="where">SolveFast, Inc</div>
+                <div class="year">2004 - Present</div>
+              </div>
+              <div class="col-xs-9">
+                <div class="profession">Senior Consultant</div>
+                <div class="description">Participated in development of FlettExchange online commodities exchange system.
+                    Designed to handle over 100,000 transactions per day and 10,000 users for multiple markets around the globe. The system and application farms are tiered and can be scaled horizontally to increase capacity and performance. 100% browser-based, Flett Exchange software was written specifically for methods of commodities trading -- exchanging bids and offers, negotiating and completing deals
+                    <a href="http://www.flettexchange.com">FlettExchange.</a></br>
+
+                    Designed and coded Sentinel server which provides 24 x 7 operational monitoring, alerting, issue discovery, analysis and autonomic response automation infrastructure for IBM Informix data servers' environment
+                    <a href="https://www.serverstudio.com/products/sentinel/">Sentinel.</a></div>
+              </div>
+            </div>
+            <div class="job clearfix">
+              <div class="col-xs-3">
+                <div class="where">AGS Ltd</div>
+                <div class="year">1998-2004</div>
+              </div>
+              <div class="col-xs-9">
+                <div class="profession">Programmer</div>
+                <div class="description">Designed and implemented WEB based Sales Support Application
+                    and coded Server Studio Java Edition  visual server administration. Designed and database schema management tools suite for IBM Informix database servers.
+                    Participated in implementation of Xpediter/SQL  database stored procedure development environment for Sybase and MS SQL Server database servers.</div>
+              </div>
+            </div>
+          </div>
+
+            <!-- EDUCATION -->
+            <div class="box">
+                <h2>Education</h2>
+                <ul id="education" class="clearfix">
+                    <li>
+                        <div class="year pull-left">2014</div>
+                        <div class="description pull-right">
+                            <h3>DevBootCamp</h3>
+                            <p>Ruby on Rails, MySQL, NoSQL, jQuery</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="year pull-left">2008</div>
+                        <div class="description pull-right">
+                            <h3>Learning Tree International</h3>
+                            <p>Web services with Java</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="year pull-left">2007</div>
+                        <div class="description pull-right">
+                            <h3>Oracle</h3>
+                            <p>Certified Java Developer</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="year pull-left">1998</div>
+                        <div class="description pull-right">
+                            <h3>Pace University</h3>
+                            <p>B.A. in Computer Science, Business Minor</p>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
 
-     </div>
-     </div>
-
-
-      <div id = "main_content" class="main_content">
-        <!-- Main -->
-        <div id="content_aboutme" style="display:none">
-          Let me introduce myself:
-
-My name is Gary Ginzburg (originally from Moscow, Russia) currently residing in Brooklyn, NY.
-Even though I am an experienced Java software developer - I am excited to learn at DBC as this is a truly new and innovative education startup company. I want to connect with NYC startup world as well as learn new technologies (Ruby on Rails) and improve on other technologies that I already know such as JavaScript/HTML/CSS.
-        </div>
-        <div id="content_myprojects" style="display:none">My Projects place holder</div>
-        <div id="content_philosophy" style="display:none">Team Philosophy place holder</div>
-        <div id="content_contact" style="display:none">Contact info place holder</div>
-        <div id="content_blog" style="display:none">
-          <section>
-           <h3>Technical Blogs</h3>
-           <a href="./blog/t1-git-blog.html">Git Blog</a>
-           <br/>
-           <a href="./blog/t2-css-design.html">CSS Blog</a>
-           <br/>
-           <a href="./blog/t3-arrays-hashes.html">Arrays and Hashes Blog</a>
-           <br/>
-           <a href="./blog/t4-enumerable-methods.html">Enumerable#group_by method</a>
-           <br/>
-           <a href="./blog/t5-ruby-classes.html">Ruby Classes</a>
-          <br/>
-           <a href="./blog/t6-oop-concepts.html">OOP Concepts</a>
-          <br/>
-           <a href="./blog/t7-JavaScript.html">Ruby vs JavaScript</a>
-          <br/>
-           <a href="./blog/t8-tech.html">Regural Expressions</a>
-
-
-           <h3>Cultural Blogs</h3>
-           <a href="./blog/c1-chefs-kitchen.html">Thoughts on DevBootCamp</a>
-           <br/>
-           <a href="./blog/c3_thinking-style.html">How my thinking style fits into DBC culture</a>
-           <br/>
-           <a href="./blog/c4-tech-issues.html">Net Neutrality - What Is It And Why Is It an Important Issue?</a>
-           <br/>
-           <a href="./blog/c5-feedback.html">Giving And Receiving Feedback at DBC</a>
-           <br/>
-           <a href="./blog/c6-stereotype-threat.html">Stereotype Threat</a>
-           <br/>
-           <a href="./blog/c7-values.html">How to combat Stereotype Threat at DBC</a>
-           <br/>
-           <a href="./blog/c8-conflict.html">Ways of dealing with conflict</a>
-         </section>
         </div>
 
-        &nbsp;
+
+        <div class="col-xs-12 col-sm-5">
+          <!-- CONTACT -->
+          <div class="box clearfix">
+            <h2>Contact</h2>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+              <div class="title only pull-right">garyginzburg@hotmail.com</div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fa fa-linkedin fa-fw"></span></div>
+              <div class="title pull-right">LinkedIn</div>
+              <div class="description pull-right"><a href="http://www.linkedin.com/pub/gary-ginzburg/6/a03/630/">Click Here</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="icon pull-left text-center"><span class="fa fa-skype fa-fw"></span></div>
+              <div class="title pull-right">Skype</div>
+              <div class="description pull-right">gary.ginz</div>
+            </div>
+              <div class="contact-item">
+                  <div class="icon pull-left text-center"><span class="fa fa-twitter fa-fw"></span></div>
+                  <div class="title pull-right">Twitter</div>
+                  <div class="description pull-right"><a href="https://twitter.com/gary_dbc">Click Here</a></div>
+              </div>
+          </div>
+          <!-- SKILLS -->
+          <div class="box">
+            <h2>Skills</h2>
+            <div class="skills">
+              <div class="item-skills" data-percent="0.8">Java</div>
+              <div class="item-skills" data-percent="0.5">JavaScript</div>
+              <div class="item-skills" data-percent="0.5">Ruby on Rails</div>
+              <div class="item-skills" data-percent="0.5">GWT</div>
+                <div class="item-skills" data-percent="0.8">SQL</div>
+                <div class="item-skills" data-percent="0.3">HTML5</div>
+              <div class="item-skills" data-percent="0.5">CSS</div>
+              <div class="item-skills" data-percent="0.2">jQuery</div>
+              <div class="skills-legend clearfix">
+                <div class="legend-left legend">Beginner</div>
+                <div class="legend-left legend"><span>Proficient</span></div>
+                <div class="legend-right legend"><span>Expert</span></div>
+                <div class="legend-right legend">Master</div>
+              </div>
+            </div>
+          </div>
+          <!-- LANGUAGES -->
+          <div class="box">
+            <h2>Languages</h2>
+            <div id="language-skills">
+              <div class="skill">English </div>
+              <div class="skill">Russian</div>
+
+            </div>
+          </div>
+          <!-- HOBBIES -->
+          <div class="box">
+            <h2>Hobbies</h2>
+            <div class="hobby">Fitness</div>
+            <div class="hobby">Skiing</div>
+            <div class="hobby">Cooking</div>
+          </div>
+        </div>
       </div>
-    <div>
-        <!-- Footer -->
-        <span class="copyright">Copyright Gary Ginzburg &copy; 2014. All rights reserved.
-     </div>
-  </div>
-
-</body></html>
+    </div>
+    <!-- JQUERY -->
+    <script src="js/jquery.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- SCRIPTS -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
